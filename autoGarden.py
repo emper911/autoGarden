@@ -14,6 +14,7 @@ hrs15 = 54000.00
 hrs12  = 43200.00
 hrs13 = 46800.00
 hrs24 = 86400.00
+hr = 3600
 
 #light time default is 13 hrs
 hrs = 46800.00
@@ -52,17 +53,16 @@ def motorTimer():
 def printer(Time):
     print("{0:06.2f} LED time\n".format(time.time() - Time))
 
-def blueToothHandler():
-    global tMotorOn  #motor time On
-    global tMotorOff #motor time Off
-    global hrs       #time light is on
-    global start     #boolean that is ON/OFF switch
-
-    #must send information - TX: humidity, temperature, tMotorOn, tMotorOff, hrs
+ 
+def serverSocket():
+    """Garden acts as server. On a seperate thread will wait for connection
+    however should be able to respond to physical controls as well.
+    Motor time: will always recieve proper value handled by client side
+    LED Time: will be sent along with motor time in an array.
+    """
+def automatedProcess():
+    """Responds to inputs from the humdity and temperature sensor, adjusting motor time specifics for humidity."""
     
-    #must receive information - RX: tMotorOn, tMotorOff, hrs, start(make a kill switch on the bluetooth device)
-    
-
 while True:
     motor.off()
     lights.off()
@@ -75,15 +75,15 @@ while True:
         LEDTime = time.time()
         motorTime = time.time()
     #when button is pressed program starts
-    while start:
+    while start:#on/off button
         #if button is pressed again program terminates into user determined loop
-
+        
         LEDTimer()
         motorTimer()
-
+        
         if ONOFF_Button.is_pressed:
             time.sleep(1)
             start = False
             print("Garden is Off")
 
-
+    
