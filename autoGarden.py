@@ -19,13 +19,10 @@ hr = 3600
 #light time default is 13 hrs
 hrs = 46800.00
 interval = 3600.00 #incriments of 1 hr
-
-
 #motor times default is 1 min on and 4 minutes off
 tMotorOn = 60.00
 tMotorOff = 240.00
 t30sec = 30.00 #increments of 30 seconds
-
 motorTime = 0
 currentTime = 0
 LEDTime = 0
@@ -49,20 +46,25 @@ def motorTimer():
     else:
         printer(LEDTime)
         motorTime = time.time()
-
-def printer(Time):
-    print("{0:06.2f} LED time\n".format(time.time() - Time))
-
- 
-def serverSocket():
-    """Garden acts as server. On a seperate thread will wait for connection
-    however should be able to respond to physical controls as well.
-    Motor time: will always recieve proper value handled by client side
-    LED Time: will be sent along with motor time in an array.
-    """
-def automatedProcess():
-    """Responds to inputs from the humdity and temperature sensor, adjusting motor time specifics for humidity."""
     
+def motorTimeButtonPress():
+    global tMotorOn
+    global tMotorOff
+    if tMotorOn == 90.00: #maximum time on is 1min and 30secs
+        tMotorOn = 30.00
+        tMotorOff = 270.00
+    else:
+        tMotorOn = tMotorOn + 30.00
+        tMotorOff = tMotorOff - 30.00
+
+def lightTimeButtonPress():
+    global hrs
+    if hrs == 54000.00:#15hrs is maximum
+        hrs = 39600.00 #resets to 11hrs
+    else:
+        hrs = hrs + 3600.00
+    print("Light is on for: " + hrs/3600.00 + ".\n")
+        
 while True:
     motor.off()
     lights.off()
@@ -77,13 +79,17 @@ while True:
     #when button is pressed program starts
     while start:#on/off button
         #if button is pressed again program terminates into user determined loop
-        
         LEDTimer()
         motorTimer()
-        
+        tempHumSensor()
         if ONOFF_Button.is_pressed:
             time.sleep(1)
             start = False
             print("Garden is Off")
+        if motorTime_button.is_pressed:
+            motorTimeButtonPress()
+        if lightTime_Button.is_pressed:
+            lightTimeButtonPress()
+                
 
     
