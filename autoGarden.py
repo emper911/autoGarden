@@ -9,20 +9,12 @@ ONOFF_Button = Button(26)
 motorTime_Button = Button(23)
 lightTime_Button = Button(24)
 start = False #when button is pressed to begin
-#light times
-hrs15 = 54000.00
-hrs12  = 43200.00
-hrs13 = 46800.00
-hrs24 = 86400.00
-hr = 3600
-
+#light times hrs15 = 54000.00, hrs12  = 43200.00, hrs13 = 46800.00, hrs24 = 86400.00, hr = 3600
 #light time default is 13 hrs
 hrs = 46800.00
-interval = 3600.00 #incriments of 1 hr
 #motor times default is 1 min on and 4 minutes off
 tMotorOn = 60.00
-tMotorOff = 240.00
-t30sec = 30.00 #increments of 30 seconds
+tMotorOff = 240.00  #increments of 30 seconds
 motorTime = 0
 currentTime = 0
 LEDTime = 0
