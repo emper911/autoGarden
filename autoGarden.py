@@ -3,11 +3,11 @@ import RPi.GPIO as GPIO
 from gpiozero import LED, Button
 
 #GPIO pins
-motor = LED(27)
-lights = LED(17)
-ONOFF_Button = Button(26)
-motorTime_Button = Button(23)
-lightTime_Button = Button(24)
+motor = LED(4)
+lights = LED(23)
+ONOFF_Button = Button(21)
+motorTime_Button = Button(5)
+lightTime_Button = Button(25)
 start = False #when button is pressed to begin
 #light times hrs15 = 54000.00, hrs12  = 43200.00, hrs13 = 46800.00, hrs24 = 86400.00, hr = 3600
 #light time default is 13 hrs
