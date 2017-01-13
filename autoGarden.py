@@ -19,6 +19,7 @@ motorTime = 0
 currentTime = 0
 LEDTime = 0
 
+#Function handles timing for lighting in a 24hr cycle. 
 def LEDTimer():
     global LEDTime
     if (time.time() - LEDTime) < hrs:
@@ -27,7 +28,7 @@ def LEDTimer():
         lights.off()
     else:
         LEDTime = time.time()
-
+#Function handles timing for water pump in a 5min cycle. 
 def motorTimer():
     global motorTime
     global LEDTime
@@ -38,7 +39,8 @@ def motorTimer():
     else:
         printer(LEDTime)
         motorTime = time.time()
-    
+        
+#Handles button press event changing duration of ON time for water pump in a 5min cycle.    
 def motorTimeButtonPress():
     global tMotorOn
     global tMotorOff
@@ -48,7 +50,8 @@ def motorTimeButtonPress():
     else:
         tMotorOn = tMotorOn + 30.00
         tMotorOff = tMotorOff - 30.00
-
+        
+#Handles button press event changing duration of ON time for lighting in a 24hr cycle.    
 def lightTimeButtonPress():
     global hrs
     if hrs == 54000.00:#15hrs is maximum
@@ -56,7 +59,10 @@ def lightTimeButtonPress():
     else:
         hrs = hrs + 3600.00
     print("Light is on for: " + hrs/3600.00 + ".\n")
-        
+    
+def tempHumSensor():
+    
+
 while True:
     motor.off()
     lights.off()
