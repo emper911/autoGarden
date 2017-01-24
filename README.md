@@ -13,7 +13,6 @@ There are three different buttons.
 
 Future Improvements:
 - To add a temperature and humidity sensor for better monitoring √
-- To add other physical buttons capable of changing the motor and lighting times. √
 - To create software over a network for remote access to the system changing motor timing and light timing
   as well as send information on humdity and temperature.
 
