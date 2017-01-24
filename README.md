@@ -16,4 +16,4 @@ Future Improvements:
 - To create software over a network for remote access to the system changing motor timing and light timing
   as well as send information on humdity and temperature.
 
-
+For more information please check the wiki.
