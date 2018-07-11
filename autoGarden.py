@@ -61,7 +61,7 @@ def lightTimeButtonPress():
     print("Light is on for: " + hrs/3600.00 + ".\n")
     
 def tempHumSensor():
-    
+    return 0
 
 while True:
     motor.off()
@@ -84,7 +84,7 @@ while True:
             time.sleep(1)
             start = False
             print("Garden is Off")
-        if motorTime_button.is_pressed:
+        if motorTime_Button.is_pressed:
             motorTimeButtonPress()
         if lightTime_Button.is_pressed:
             lightTimeButtonPress()
