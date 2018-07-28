@@ -10,6 +10,6 @@ Would like to connect systems to the cloud and process data through agrigrating 
 """
 
 def main():
-    
+    return 0
 
 main()

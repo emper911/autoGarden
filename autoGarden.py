@@ -32,8 +32,8 @@ lights = LED(23)
 ONOFF_Button = Button(21)
 motorTime_Button = Button(5)
 lightTime_Button = Button(25)
-start = False #when button is pressed to begin
-#light times hrs15 = 54000.00, hrs12  = 43200.00, hrs13 = 46800.00, hrs24 = 86400.00, hr = 3600
+start = False #when button is pressed to begin  
+#light times hrs15 = 54000.00, hrs12  = 43200.00, hrs13 = 46800.00, , hr = 3600
 #light time default is 13 hrs
 hrs = 46800.00
 #motor times default is 1 min on and 4 minutes off
@@ -42,6 +42,8 @@ tMotorOff = 240.00  #increments of 30 seconds
 motorTime = 0
 currentTime = 0
 LEDTime = 0
+
+hrs24 = 86400.00
 
 #Function handles timing for lighting in a 24hr cycle. 
 def LEDTimer():
