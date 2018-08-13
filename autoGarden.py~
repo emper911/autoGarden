@@ -111,10 +111,8 @@ while True:
             start = False
             print("Garden is Off")
         if motorTime_Button.is_pressed:
-            time.sleep(1)
             motorTimeButtonPress()
         if lightTime_Button.is_pressed:
-            time.sleep(1)
             lightTimeButtonPress()
                 
 
