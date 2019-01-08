@@ -1,15 +1,26 @@
-Author: Rikitaro Suzuki
-Project Start Date: May 8th, 2016.
-Date: July 10th, 2018.
-Modified: January 8th, 2019.
-Description: 
-This project is to develop code that can control the production of produce through individual hydroponic systems. Throughout the world physical geographic conditions limit different communities and their ability to grow specific crops and produce, vital to the nutrition of adults and children. This is observed in desert climates, as well as changing arctic climates in places such as Northern Territories of Canada. Through digitally controlled hydroponic systems built with sustainable technology, it may be possible to overcome these circumstances. Not taken into account of this project is the economic cost of doing so, as well as the willingness of local communities to adopt, such a method as they may prefer other solutions. Progress made so far is a working individual unit that needs major refinements. 
+##AutoGarden
+- Author: Rikitaro Suzuki.
+- Project Start Date: May 8th, 2016.
+- Date: July 10th, 2018.
+- Modified: January 8th, 2019.
+- Description: 
+  -  This project is to develop code that can control the production of produce through individual hydroponic systems.  
+     Throughout the world physical geographic conditions limit different communities and their ability to grow specific crops 
+     and produce, vital to the nutrition of adults and children. This is observed in desert climates, as well as changing 
+     arctic climates in places such as Northern Territories of Canada. Through digitally controlled hydroponic systems built 
+     with sustainable technology, it may be possible to overcome these circumstances. Not taken into account of this project 
+     is the economic cost of doing so, as well as the willingness of local communities to adopt, such a method as they may 
+     prefer other solutions. Progress made so far is a working individual unit that needs major refinements. 
+     
+     The end goal is to connect systems to the cloud and process data through aggregating hydroponic unit data and improve 
+     output levels of these units from input history. This information can be processed and adjust controls of the plants to 
+     suite the needs of the individual plant, as well as possibly taking into account physical geographic conditions of where 
+     the unit is situated. 
 
-The end goal is to connect systems to the cloud and process data through aggregating hydroponic unit data and improve output levels of these units from input history. This information can be processed and adjust controls of the plants to suite the needs of the individual plant, as well as possibly taking into account physical geographic conditions of where the unit is situated. 
+     To effectively create a solution, it is required to define specific variables for inputs (sensors) and outputs (controls) 
+     that can be used to monitor and respond to plant growth.
 
-To effectively create a solution, it is required to define specific variables for inputs (sensors) and outputs (controls) that can be used to monitor and respond to plant growth.
-
-General Overview:
+##General Overview:
  - Scopes:
     - Individual System 1.0:
         - Ideally a hydroponic timing system that runs on a schedule for the specific crop. 
@@ -54,7 +65,3 @@ General Overview:
         - Retrieve data from multiple hydroponic systems through a REST API that allows for communication. 
         - Develop generalized schedule for a specific plant species that would meet requiresments of good, edible food. 
         - Be able to create schedules for specific scales of operations. must know certain dimesnsions and rates of change. 
-        
-
-
-"""
