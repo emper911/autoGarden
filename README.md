@@ -1,4 +1,4 @@
-##AutoGarden
+**AutoGarden**
 - Author: Rikitaro Suzuki.
 - Project Start Date: May 8th, 2016.
 - Date: July 10th, 2018.
@@ -20,7 +20,7 @@
      To effectively create a solution, it is required to define specific variables for inputs (sensors) and outputs (controls) 
      that can be used to monitor and respond to plant growth.
 
-##General Overview:
+**General Overview:**
  - Scopes:
     - Individual System 1.0:
         - Ideally a hydroponic timing system that runs on a schedule for the specific crop. 
